@@ -1,6 +1,5 @@
 const http = require('http');
 const fs = require('fs');
-const { red } = require('color-name');
 
 const hostname = '127.0.0.1';
 const port = 3000;
