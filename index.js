@@ -1,33 +1,22 @@
-const http = require('http')
-const fs = require('fs') 
-const url = require('url')
+const http = require('http');
+const fs = require('fs')
 
-const port = 3000
+const hostname = '127.0.0.1';
+const port = 3000;
 
-const homeUrl = 'http://localhost:3000/'
-const aboutUrl = 'http://localhost:3000/about.html'
-
-console.log(aboutUrl)
-
-const server = http.createServer((req,res)=>{
-
-    if(req.url.pathname === '/about'){
-        fs.readFile('/home/norfkorean/node-basicinformationalsite-project/about.html', 'utf8' , (err,data)=>{
-            res.statusCode = 200
-            res.setHeader('Content-Type', 'text/html')
-            res.end(data)
+const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html;charset=utf8');
+    if (req.url === '/') {
+    fs.readFile('index.html', 'utf-8', (error,data)=>{
+        res.end(data)
+    })} else if(req.url ==='/about'){
+        fs.readFile('about.html', 'utf-8', (error,data)=>{
+            res.end(data);
         })
     } 
-    // else if(aboutUrl){
-    //     fs.readFile('/home/norfkorean/node-basicinformationalsite-project/about.html', 'utf8' , (err,data)=>{
-    //         res.statusCode = 200
-    //         res.setHeader('Content-Type', 'text/html')
-    //         res.end(data)
-    //     })
-    // }
-    
-})
+});
 
-server.listen(port, () =>{
-    console.log(`server running at ${port}!!`)
-})
+server.listen(port, hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/`);
+});
