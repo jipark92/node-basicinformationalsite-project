@@ -1,0 +1,26 @@
+{
+  "name": "basicinformationalsite-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/norfkorean/node-basicinformationalsite-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/norfkorean/node-basicinformationalsite-project/issues"
+  },
+  "homepage": "https://github.com/norfkorean/node-basicinformationalsite-project#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.13.0"
+  }
+}
